@@ -44,7 +44,7 @@ namespace csTK
             GL.Color4(Color4.Blue);
             GL.Vertex3(1.0f, 1.0f, 4.0f);
             GL.End();
-
+            
             glControl.SwapBuffers();
         }
 

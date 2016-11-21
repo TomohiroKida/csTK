@@ -8,20 +8,27 @@ namespace BezierClass
 {
     public class Bernstein
     {
-        private float _b0, _b1, _b2, _b3;
+        readonly int PARAMETRIC_MAX = 1;
+
+        public static int ParametricMax
+        {
+            get { return this.PARAMETRIC_MAX; }
+        }
+        
+        public float[] b = new float[4];
         public void Init(float t)
         {
-            _b0 = BS0(t);
-            _b1 = BS1(t);
-            _b2 = BS2(t);
-            _b3 = BS3(t);
+            b[0] = BS0(t);
+            b[1] = BS1(t);
+            b[2] = BS2(t);
+            b[3] = BS3(t);
         }
         public void dInit(float t)
         {
-            _b0 = dBS0(t);
-            _b1 = dBS1(t);
-            _b2 = dBS2(t);
-            _b3 = dBS3(t);
+            b[0] = dBS0(t);
+            b[1] = dBS1(t);
+            b[2] = dBS2(t);
+            b[3] = dBS3(t);
         }
 
         private float BS0(float t) { return (float)Math.Pow((1 - t), 3); }
