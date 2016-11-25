@@ -8,11 +8,11 @@ namespace BezierClass
 {
     public class Bernstein
     {
-        readonly int PARAMETRIC_MAX = 1;
+        private const int PARAMETRIC_MAX = 1;
 
         public static int ParametricMax
         {
-            get { return this.PARAMETRIC_MAX; }
+            get { return PARAMETRIC_MAX; }
         }
         
         public float[] b = new float[4];
